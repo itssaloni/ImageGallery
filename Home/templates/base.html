@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    {% block css %}
+    {% endblock css %}
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        ul{
+            display: flex;
+            gap: 30px;
+            background-color: black;
+            text-decoration: none;
+            color: white;
+            list-style: none;
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        a:hover{
+            color: aqua;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-weight:50; 
+        }
+    </style>
+        
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'images' %}">Images</a></li>
+            <li><a href="{% url 'categories' %}">Categories</a></li>
+            <li><a href="{% url 'tags' %}">Tags</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- <h1>Image Gallery using Django.</h1> -->
+        
+        {% block content %}
+        {% endblock content %}
+            
+    </main>
+</body>
+</html>

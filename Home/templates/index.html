@@ -1,1 +1,16 @@
-{{categories}}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- <p>This is Home.</p>
+    {{categories}} -->
+    <div class="image-container">
+        
+        {% for i in images %}
+            <div class="card">
+                <img src="{{i.file.url}}">
+            </div>
+        {% endfor %}
+            
+    </div>
+{% endblock content %}
+    

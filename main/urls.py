@@ -18,10 +18,19 @@ from django.contrib import admin
 from django.urls import path
 from Home.views import view_categories
 from Home.views import view_tags
+from Home.views import view_images
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', view_categories, name='view_categories'),
-    path('tags', view_tags, name='view_tags'),
-
+    path('categories', view_categories, name='categories'),
+    path('tags', view_tags, name='tags'),
+    path('', view_images, name='images'),
 ]
+
+urlpatterns += static(
+    settings.MEDIA_URL,
+    document_root = settings.MEDIA_ROOT
+)

@@ -18,7 +18,8 @@ def view_categories(request):
     
 def view_tags(request):
     tags = Tag.objects.all()
-    return render(request, 'tags.html', {'tags': tags})
+    return render(request, 'tags.html', {'tags': tags}) 
 
 def view_images(request):
-    pass
+    images = Image.objects.all()
+    return render(request, 'index.html', {'images': images})
