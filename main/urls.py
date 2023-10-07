@@ -18,16 +18,23 @@ from django.contrib import admin
 from django.urls import path
 from Home.views import view_categories
 from Home.views import view_tags
-from Home.views import view_images
+from Home.views import view_images, upload_image, add_tag, add_category
+from Home.views import delete_image
 
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('categories', view_categories, name='categories'),
+    path('category', view_categories, name='category'),
     path('tags', view_tags, name='tags'),
     path('', view_images, name='images'),
+    
+    path('image/add', upload_image, name = "upload_image"),
+    path('tag/add', add_tag, name = 'add_tag'),
+    path('category/add', add_category, name = "add_category"),
+    
+    path('image/delete/<int:id>', delete_image, name = "delete_image"),
 ]
 
 urlpatterns += static(

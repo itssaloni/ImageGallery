@@ -51,12 +51,11 @@
     <nav>
         <ul>
             <li><a href="{% url 'images' %}">Images</a></li>
-            <li><a href="{% url 'categories' %}">Categories</a></li>
+            <li><a href="{% url 'category' %}">Categories</a></li>
             <li><a href="{% url 'tags' %}">Tags</a></li>
         </ul>
     </nav>
     <main>
-        <!-- <h1>Image Gallery using Django.</h1> -->
         
         {% block content %}
         {% endblock content %}
