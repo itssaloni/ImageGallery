@@ -1,0 +1,8 @@
+<ul class="tag">
+    {% for tag in tags %}
+    <li>{{tag}}</li>
+    {% empty %}
+    <li>No tags yet</li>
+    {% endfor %}
+    <button hx-get="{% url 'get_tags' %}" hx-swap="outerHTML" hx-target=".tag">Refresh</button>
+</ul>

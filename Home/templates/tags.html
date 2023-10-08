@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<style>
+    .form-container {
+        padding: 1rem;
+        /* margin: 20px; */
+    }
+    .tag{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        list-style: none;
+    }
+</style>
+{% endblock css %}
 
 {% block content %}
-    <!-- <p>This is Home.</p>
-    {{tags}} -->
+<div class="form-container">
+    {% include 'partials/tag_form.html' %}
+</div>
+<div class="tag-list">
+    {% include 'partials/tag_list.html' %}
+</div>
 {% endblock content %}

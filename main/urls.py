@@ -19,7 +19,7 @@ from django.urls import path
 from Home.views import view_categories
 from Home.views import view_tags
 from Home.views import view_images, upload_image, add_tag, add_category
-from Home.views import delete_image
+from Home.views import delete_image, get_tags
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -35,6 +35,7 @@ urlpatterns = [
     path('category/add', add_category, name = "add_category"),
     
     path('image/delete/<int:id>', delete_image, name = "delete_image"),
+    path('tag/list', get_tags, name="get_tags"),
 ]
 
 urlpatterns += static(
